@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.340">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Time Series Analysis - Introduction</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Time Series Analysis</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Time Series</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about_me.html" rel="" target="">
+ <span class="menu-text">About Me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./intro.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./data_sources.html" rel="" target="">
+ <span class="menu-text">Data Sources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./dv.html" rel="" target="">
+ <span class="menu-text">Data Visualization</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./eda.html" rel="" target="">
+ <span class="menu-text">Exploratory Data Analysis</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./models.html" rel="" target="">
+ <span class="menu-text">ARMA/ARIMA/SARIMA Models</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./models2.html" rel="" target="">
+ <span class="menu-text">ARIMAX/SARIMAX/VAR</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./fin_ts_models.html" rel="" target="">
+ <span class="menu-text">Financial Time Series Models (ARCH/GARCH)</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./deep_learning.html" rel="" target="">
+ <span class="menu-text">Deep Learning for TS</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./conclusions.html" rel="" target="">
+ <span class="menu-text">Conclusions</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#global-warming-and-greenhouse-effects" id="toc-global-warming-and-greenhouse-effects" class="nav-link active" data-scroll-target="#global-warming-and-greenhouse-effects">Global Warming and Greenhouse Effects</a>
+  <ul class="collapse">
+  <li><a href="#carbon-dioxide" id="toc-carbon-dioxide" class="nav-link" data-scroll-target="#carbon-dioxide">Carbon Dioxide</a></li>
+  <li><a href="#methane-and-nitrous-oxide" id="toc-methane-and-nitrous-oxide" class="nav-link" data-scroll-target="#methane-and-nitrous-oxide">Methane and Nitrous Oxide</a></li>
+  <li><a href="#fluorinated-gases" id="toc-fluorinated-gases" class="nav-link" data-scroll-target="#fluorinated-gases">Fluorinated Gases</a></li>
+  <li><a href="#global-radiative-forcing" id="toc-global-radiative-forcing" class="nav-link" data-scroll-target="#global-radiative-forcing">Global Radiative Forcing</a></li>
+  </ul></li>
+  <li><a href="#greenhouse-gas-emissions-by-sector" id="toc-greenhouse-gas-emissions-by-sector" class="nav-link" data-scroll-target="#greenhouse-gas-emissions-by-sector">Greenhouse Gas Emissions by Sector</a></li>
+  <li><a href="#energy-industry" id="toc-energy-industry" class="nav-link" data-scroll-target="#energy-industry">Energy Industry</a>
+  <ul class="collapse">
+  <li><a href="#u.s.-energy-related-carbon-dioxide-emissions-by-source" id="toc-u.s.-energy-related-carbon-dioxide-emissions-by-source" class="nav-link" data-scroll-target="#u.s.-energy-related-carbon-dioxide-emissions-by-source">U.S. Energy-related Carbon Dioxide Emissions by Source</a></li>
+  <li><a href="#clean-energy" id="toc-clean-energy" class="nav-link" data-scroll-target="#clean-energy">Clean Energy</a></li>
+  </ul></li>
+  <li><a href="#the-big-picture" id="toc-the-big-picture" class="nav-link" data-scroll-target="#the-big-picture">The Big Picture</a></li>
+  <li><a href="#business-questions" id="toc-business-questions" class="nav-link" data-scroll-target="#business-questions">Business Questions</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Introduction</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="global-warming-and-greenhouse-effects" class="level2">
+<h2 class="anchored" data-anchor-id="global-warming-and-greenhouse-effects">Global Warming and Greenhouse Effects</h2>
+<p>Here is an article from <a href="https://education.nationalgeographic.org/resource/greenhouse-effect/">National Geographic</a> on greenhouse effect:</p>
+<p>Human activities contribute to global warming by increasing the greenhouse effect. The greenhouse effect happens when certain gases—known as greenhouse gases—collect in Earth’s atmosphere. These gases, which occur naturally in the atmosphere, include <strong>carbon dioxide, methane, nitrogen oxide, and fluorinated gases sometimes known as chlorofluorocarbons (CFCs)</strong>.<br>
+<br>
+Greenhouse gases let the sun’s light shine onto Earth’s surface, but they trap the heat that reflects back up into the atmosphere. In this way, they act like the insulating glass walls of a greenhouse. The greenhouse effect keeps Earth’s climate comfortable. Without it, surface temperatures would be cooler by about 33 degrees Celsius (60 degrees Fahrenheit), and many life forms would freeze.<br>
+<br>
+Since the Industrial Revolution in the late 1700s and early 1800s, people have been releasing large quantities of greenhouse gases into the atmosphere. That amount has skyrocketed in the past century. Greenhouse gas emissions increased 70 percent between 1970 and 2004. Emissions of <strong>carbon dioxide</strong>, the most important greenhouse gas, rose by about 80 percent during that time. The amount of carbon dioxide in the atmosphere today far exceeds the natural range seen over the last 650,000 years.</p>
+<section id="carbon-dioxide" class="level3">
+<h3 class="anchored" data-anchor-id="carbon-dioxide">Carbon Dioxide</h3>
+<p><br>
+Most of the <strong>carbon dioxide</strong> that people put into the atmosphere comes from <strong>burning fossil fuels such as oil, coal, and natural gas</strong>. Cars, trucks, trains, and planes all burn fossil fuels. Many electric power plants also burn fossil fuels.<br>
+<br>
+Another way people release carbon dioxide into the atmosphere is by <strong>cutting down forests</strong>. This happens for two reasons. Decaying plant material, including trees, releases tons of carbon dioxide into the atmosphere. Living trees absorb carbon dioxide. By diminishing the number of trees to absorb carbon dioxide, the gas remains in the atmosphere.</p>
+</section>
+<section id="methane-and-nitrous-oxide" class="level3">
+<h3 class="anchored" data-anchor-id="methane-and-nitrous-oxide">Methane and Nitrous Oxide</h3>
+<p><br>
+Most <strong>methane</strong> in the atmosphere comes from <strong>livestock farming, landfills, and fossil fuel production</strong> suchas coal mining and natural gas processing. <strong>Nitrous oxide</strong> comes from <strong>agricultural technology</strong> and <strong>fossil fuel burning</strong>.<br>
+</p>
+</section>
+<section id="fluorinated-gases" class="level3">
+<h3 class="anchored" data-anchor-id="fluorinated-gases">Fluorinated Gases</h3>
+<p><br>
+<strong>Fluorinated gases</strong> include chlorofluorocarbons, hydrochlorofluorocarbons, and hydrofluorocarbons. These greenhouse gases are used in <strong>aerosol cans</strong> and <strong>refrigeration</strong>.<br>
+<br>
+All of these human activities add greenhouse gases to the atmosphere, trapping more heat than usual and contributing to global warming.</p>
+</section>
+<section id="global-radiative-forcing" class="level3">
+<h3 class="anchored" data-anchor-id="global-radiative-forcing">Global Radiative Forcing</h3>
+<p>The climate portal at MIT explains that radiative forcing is what happens when the amount of energy that enters the Earth’s atmosphere is different from the amount of energy that leaves it. Energy travels in the form of radiation: solar radiation entering the atmosphere from the sun, and infrared radiation exiting as heat. If more radiation is entering Earth than leaving—as is happening today—then the atmosphere will warm up. This is called radiative forcing because the difference in energy can force changes in the Earth’s climate.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/Radiative-forcing-infographic.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Published September 25, 2020. This Explainer was adapted from “<a href="https://news.mit.edu/2010/explained-radforce-0309">Explained: Radiative Forcing</a>” by David Chandler, which originally appeared in MIT News.</figcaption>
+</figure>
+</div>
+
+<div class="tableauPlaceholder" id="viz1677698644494" style="position: relative"><noscript><a href="#"><img alt="Global Radiative Forcing  " src="https://public.tableau.com/static/images/gl/global_radiative_forcing/Sheet2/1_rss.png" style="border: none"></a></noscript><object class="tableauViz" style="display:none;"><param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F"> <param name="embed_code_version" value="3"> <param name="site_root" value=""><param name="name" value="global_radiative_forcing/Sheet2"><param name="tabs" value="no"><param name="toolbar" value="yes"><param name="static_image" value="https://public.tableau.com/static/images/gl/global_radiative_forcing/Sheet2/1.png"> <param name="animate_transition" value="yes"><param name="display_static_image" value="yes"><param name="display_spinner" value="yes"><param name="display_overlay" value="yes"><param name="display_count" value="yes"><param name="language" value="en-US"><param name="filter" value="publish=yes"></object></div>                <script type="text/javascript">                    var divElement = document.getElementById('viz1677698644494');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+<p><br></p>
+<p>From the graph above, we know that carbon dioxide has the most contribution to global heating imbalance. Methane has the second most contribution to global heating imbalance. Then they are chlorofluorocarbons, nitrous oxide, hydrochlorofluorocarbons, and hydrofluorocarbons.</p>
+<p><br></p>
+</section>
+</section>
+<section id="greenhouse-gas-emissions-by-sector" class="level2">
+<h2 class="anchored" data-anchor-id="greenhouse-gas-emissions-by-sector">Greenhouse Gas Emissions by Sector</h2>
+<p>After knowing what is global radiative forcing, I wanted to know what industries are the top contributors to greenhouse gas emissions.</p>
+<p>The graph below from <a href="https://ourworldindata.org/">Our World in Data</a> organization shows the greenhouse gas emissions by sector, where we can see <strong>energy industry</strong> takes up to <strong>73%</strong> of global greenhouse gas emissions in 2016. The high amount of percentage from energy industry makes me wonder if we are putting efforts in transitioning from traditional energy to clean energy and limiting our carbon footprint overtime.</p>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/Emissions-by-sector-–-pie-charts.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Source: <a href="https://ourworldindata.org/emissions-by-sector#energy-electricity-heat-and-transport-73-2">Our World in Data</a></figcaption>
+</figure>
+</div>
+<p><br></p>
+</section>
+<section id="energy-industry" class="level2">
+<h2 class="anchored" data-anchor-id="energy-industry">Energy Industry</h2>
+<section id="u.s.-energy-related-carbon-dioxide-emissions-by-source" class="level3">
+<h3 class="anchored" data-anchor-id="u.s.-energy-related-carbon-dioxide-emissions-by-source">U.S. Energy-related Carbon Dioxide Emissions by Source</h3>
+<p>According to U.S. Energy Information Administration, about half of U.S. energy-related CO<sub><strong>2</strong></sub> emissions were from petroleum use in 2021.</p>
+<p>In 2021, petroleum accounted for about 36% of U.S. energy consumption but petroleum was the source of 46% of total annual U.S. energy-related CO<sub><strong>2</strong></sub> emissions. Natural gas also provided about 32% U.S. energy and accounted for 34% of total annual energy-related CO<sub><strong>2</strong></sub> emissions. Coal was the source of about 12% of U.S. energy use and of about 21% of total annual energy-related CO<sub><strong>2</strong></sub> emissions.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.eia.gov/energyexplained/energy-and-the-environment/where-greenhouse-gases-come-from.php"><img src="image/US_energy_by_source_2021.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+<p><br></p>
+</section>
+<section id="clean-energy" class="level3">
+<h3 class="anchored" data-anchor-id="clean-energy">Clean Energy</h3>
+<p>Clean energy has been a hot topic recently as more and more people are concerned about global warming. WIth the emergence of electric vehicles and hybrid vehicles, the whole society has started to normalize EV as part of our lives. How ‘clean’ is the clean energy? Will the total carbon footprint of the supply chain of electric vehicles outweigh the traditional system? How much more electric consumption has been made as we normalize EVs?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/elec_industry.webp" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">iStock Images</figcaption>
+</figure>
+</div>
+<p><br></p>
+</section>
+</section>
+<section id="the-big-picture" class="level2">
+<h2 class="anchored" data-anchor-id="the-big-picture">The Big Picture</h2>
+<p>This time series project is going to focus on the US energy consumption over the years and I hope I would be able to get clearer ideas on energy industry and its greenhouse gasses emissions and carbon footprints overtime.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/natural_gas.webp" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">The United States refines millions of barrels of oil every day. David McNew/Getty Images</figcaption>
+</figure>
+</div>
+<p><br></p>
+</section>
+<section id="business-questions" class="level2">
+<h2 class="anchored" data-anchor-id="business-questions">Business Questions</h2>
+<ul>
+<li><p>What is the trend of states’ petroleum consumption, price, and sales over the years?</p></li>
+<li><p>What is the trend of states’ coal consumption, price, and sales over the years?</p></li>
+<li><p>What is the trend of states’ electricity consumption, price, and sales over the years?</p></li>
+<li><p>What is the trend of states’ natural gas consumption, price, and sales over the years?</p></li>
+<li><p>What is the trend of states’ CO2 emissions over the years?</p></li>
+<li><p>What is the energy import and export situation nationally and internationally over the years?</p></li>
+<li><p>What is the trend of states’ cost and savings from energy efficiency programs?</p></li>
+<li><p>How energy industry cause global warming?</p></li>
+<li><p>What information about energy would exploratory data analysis reveal?</p></li>
+<li><p>What information about energy would deep learning with time series reveal?</p></li>
+<li><p>What information and prediction would be revealed from the different time series models?</p></li>
+<li><p>What conclusion would be made based on the energy consumptions and model predictions?</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/coal_industry.jpeg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">A coal-hauling truck with 240 tons of coal drives to the surface at the Buckskin Coal Mine in Gillette, Wyo., in 2004. Robert Nickelsberg/Getty Images</figcaption>
+</figure>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2023, Rae Zhang</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/raez/">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Ririying">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
