@@ -1,0 +1,16 @@
+,year,state,report,farmtype,category,category_value,category2,category2_value,variable_id,variable_name,variable_sequence,variable_level,variable_group,variable_group_id,variable_unit,variable_description,variable_is_invalid,estimate,median,statistic,rse,unreliable_estimate,decimal_display
+0,2019,Iowa,Farm Business Income Statement,All Farms,Production Specialty,Dairy,All Farms,TOTAL,kount,Farms,10,1,,,Number,Estimated number of farms.,False,821.0,,TOTAL,0.0,0,0
+1,2019,California,Farm Business Income Statement,All Farms,Production Specialty,Dairy,All Farms,TOTAL,kount,Farms,10,1,,,Number,Estimated number of farms.,False,1239.0,,TOTAL,0.0,0,0
+2,2019,Florida,Farm Business Income Statement,All Farms,Production Specialty,Dairy,All Farms,TOTAL,kount,Farms,10,1,,,Number,Estimated number of farms.,False,,,TOTAL,,0,0
+3,2019,North Carolina,Farm Business Income Statement,All Farms,Production Specialty,Dairy,All Farms,TOTAL,kount,Farms,10,1,,,Number,Estimated number of farms.,False,129.0,,TOTAL,0.0,0,0
+4,2019,Georgia,Farm Business Income Statement,All Farms,Production Specialty,Dairy,All Farms,TOTAL,kount,Farms,10,1,,,Number,Estimated number of farms.,False,300.0,,TOTAL,0.0,0,0
+5,2019,Washington,Farm Business Income Statement,All Farms,Production Specialty,Dairy,All Farms,TOTAL,kount,Farms,10,1,,,Number,Estimated number of farms.,False,958.0,,TOTAL,0.0,0,0
+6,2019,Nebraska,Farm Business Income Statement,All Farms,Production Specialty,Dairy,All Farms,TOTAL,kount,Farms,10,1,,,Number,Estimated number of farms.,False,,,TOTAL,,0,0
+7,2019,Minnesota,Farm Business Income Statement,All Farms,Production Specialty,Dairy,All Farms,TOTAL,kount,Farms,10,1,,,Number,Estimated number of farms.,False,1934.0,,TOTAL,0.0,0,0
+8,2019,Wisconsin,Farm Business Income Statement,All Farms,Production Specialty,Dairy,All Farms,TOTAL,kount,Farms,10,1,,,Number,Estimated number of farms.,False,8078.0,,TOTAL,0.0,0,0
+9,2019,Indiana,Farm Business Income Statement,All Farms,Production Specialty,Dairy,All Farms,TOTAL,kount,Farms,10,1,,,Number,Estimated number of farms.,False,906.0,,TOTAL,0.0,0,0
+10,2019,Kansas,Farm Business Income Statement,All Farms,Production Specialty,Dairy,All Farms,TOTAL,kount,Farms,10,1,,,Number,Estimated number of farms.,False,,,TOTAL,,0,0
+11,2019,Missouri,Farm Business Income Statement,All Farms,Production Specialty,Dairy,All Farms,TOTAL,kount,Farms,10,1,,,Number,Estimated number of farms.,False,812.0,,TOTAL,0.0,0,0
+12,2019,Texas,Farm Business Income Statement,All Farms,Production Specialty,Dairy,All Farms,TOTAL,kount,Farms,10,1,,,Number,Estimated number of farms.,False,640.0,,TOTAL,0.0,0,0
+13,2019,Arkansas,Farm Business Income Statement,All Farms,Production Specialty,Dairy,All Farms,TOTAL,kount,Farms,10,1,,,Number,Estimated number of farms.,False,,,TOTAL,,0,0
+14,2019,Illinois,Farm Business Income Statement,All Farms,Production Specialty,Dairy,All Farms,TOTAL,kount,Farms,10,1,,,Number,Estimated number of farms.,False,245.0,,TOTAL,0.0,0,0

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Introduction​, Farms​">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>data cleaning</title>
+    <link rel="stylesheet" href="page.css" media="screen">
+<link rel="stylesheet" href="data-cleaning.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="page.js" defer=""></script>
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    
+    
+  </script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="data cleaning">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body u-custom-color-1"><header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-0fb1"><div class="u-align-left u-clearfix u-sheet u-sheet-1"></div></header>
+    <section class="u-clearfix u-custom-color-2 u-section-1" id="sec-fe08">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-align-center u-text u-text-custom-color-6 u-text-1">
+          <span style="font-size: 3rem;">Data Cleaning - ERS Farm Dairy Income</span>
+        </h2>
+        <p class="u-text u-text-custom-color-3 u-text-2">This page will go through the process of cleaning record data and text data.<br>
+          <br>The raw data I used to clean is the dataset of the net income and gross cash income data of all the seveyed states in the fiscal year 2019​, gathered from <a href="https://www.ers.usda.gov/developer/data-apis/arms-data-api/" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" target="_blank">ERS API</a>.<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <a href="files/allstates_dairy_netgrossincome_2019.csv" class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-2">(Raw data download)<br>
+          </a>
+          <br>The first data only shows the aggregated income but average income. so another dataset with number of dairy farms in the surveyed states is imported to be exploited. With the number of farms in each state, we would have a better idea on the well-being of individual farms regarding their dairy products.<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <a href="files/numberofdairyfarm_2019.csv" class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-3"> (Raw data download)</a>
+          <br>
+          <br>In the cleaning process, 17 missing values were filled or delted due to the correlation and relavency. 2 gathered datasets in .csv files were used, 8 visualizations were created to either discover the correlations or to analyze the information in the dataset. 3 new .csv files were created. The first raw data had 60 rows and the second raw data had 15 rows. The cleaning process deleted the rows 15 rows due to duplicate, and 12 rows because the data didn't have any numeric data of Arkansas, Florida, Kansas, and Nebraska. The 4 new .csv files Dairy_just_numeric.csv,&nbsp;Dairy_DF.csv, Dairy_DF_melt.csv, and Dairy_DF_melt2.csv each has 11, 11, 33, and 33 rows.<br>
+          <br>
+          </span>
+          <br>
+          <br>
+          <br>Here are the screenshot of the cleaned four .csv files:<br>
+          <br>
+        </p>
+        <img class="u-image u-image-default u-image-1" src="images/dairyraw1.png" alt="" data-image-width="1600" data-image-height="1029">
+        <img class="u-image u-image-default u-image-2" src="images/dairyraw2.png" alt="" data-image-width="1600" data-image-height="1020">
+        <img class="u-image u-image-default u-image-3" src="images/numberofdairyfarms2.png" alt="" data-image-width="1600" data-image-height="623">
+        <img class="u-image u-image-default u-image-4" src="images/numberofdairyfarms1.png" alt="" data-image-width="1600" data-image-height="686">
+        <img class="u-image u-image-default u-image-5" src="images/cleaned_dairyDF.png" alt="" data-image-width="2470" data-image-height="922">
+        <img class="u-image u-image-default u-image-6" src="images/cleaned_dairy_justnumeric.png" alt="" data-image-width="1600" data-image-height="510">
+        <img class="u-image u-image-default u-image-7" src="images/cleaned_dairy_justnumeric.png" alt="" data-image-width="1600" data-image-height="510">
+        <img class="u-image u-image-default u-image-8" src="images/dairymelt2.png" alt="" data-image-width="938" data-image-height="610">
+        <img class="u-image u-image-default u-image-9" src="images/cleaned_dairymelt_DF.png" alt="" data-image-width="822" data-image-height="712">
+        <p class="u-text u-text-custom-color-3 u-text-3">
+          <span style="font-weight: 700;">
+            <br>
+            <span style="font-style: italic;">Cleaned Files for download:</span>
+          </span>
+          <br>
+          <br>
+          <span style="font-style: italic;">
+            <a href="files/Dairy_DF-1.csv" class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-5">Dairy_DF.csv </a>
+            <br>
+            <br>
+            <a href="files/Dairy_DF_melt.csv" class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-6">Dairy_DF_melt.csv</a>
+            <br>
+            <br>
+            <a href="files/Dairy_just_numeric.csv" class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-7">Dairy_just_numeric.csv</a>
+          </span>
+          <br>
+          <br>
+          <a href="files/Dairy_DF_melt2.csv" class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-8">Dairy_DF_melt2.csv</a>
+          <br>
+        </p>
+        <p class="u-text u-text-custom-color-3 u-text-2">
+          <br>
+          <span style="font-weight: 700;">Here is the R Markdown file of the code&nbsp;<span style="font-weight: 400;">
+            <a href="files/R-code-for-dairy-income.pdf" download="" target="_blank" class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-4">(download)</a>
+          </span>:
+        </span>
+        <embed src="files/R-code-for-dairy-income.pdf#toolbar=0&embedded=true&zoom=140" style="-webkit-transform:scale(1);-moz-transform-scale(1)" width="100%" height="900px" frameborder="0">
+        </p>
+          <br>
+
+      </div>
+    </section>
+
+    
+    
+    <footer class="u-align-center u-clearfix u-custom-color-1 u-footer u-footer" id="sec-9ddc"><div class="u-align-left u-clearfix u-sheet u-sheet-1"></div></footer>
+    </section>
+  </body>
+</html>

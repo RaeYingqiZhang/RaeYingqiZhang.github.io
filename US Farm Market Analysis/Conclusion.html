@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Introduction​, Farms​">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Conclusion</title>
+    <link rel="stylesheet" href="page.css" media="screen">
+<link rel="stylesheet" href="Conclusion.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="page.js" defer=""></script>
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    
+    
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Conclusion">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body u-custom-color-1"><header class="u-clearfix u-custom-color-2 u-header u-header" id="sec-0fb1"><div class="u-align-left u-clearfix u-sheet u-sheet-1"></div></header>
+    <section class="u-clearfix u-custom-color-3 u-section-1" id="sec-fe08">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <img class="u-expanded-width u-image u-image-default u-image-1" src="images/2017_06-02_FSNY_Sheep_pasture_landscape_DSC_8640_CREDIT_Farm_Sanctuary-1600x900.jpeg" alt="" data-image-width="1600" data-image-height="900">
+        <h2 class="u-align-center u-text u-text-custom-color-5 u-text-1">
+          <span style="font-size: 2.8125rem; font-weight: 400;">Conclusion</span>
+        </h2>
+        <p class="u-align-center u-text u-text-custom-color-2 u-text-2"> The datasets I used in my website came from NewsAPI, ERS website, PubAg website, and Twitter. My original data science questions had some questions that I didn't touch due to the lack of data resources and time. For example, the question on the most profitable products in each state, the question on farm consolidation, the question on the organic food market, etc. However, instead of touching the surface of each question, I chose to dive deeper into the financial well-being of the farms in the ERS surveyed states. I also did several data science analyses on the text-format datasets such as analyzing the differences between the datasets I gathered by different keywords  "Diary", "Corn", "Organic Farms", "Wheat", and "Farms" from PubAg or the Tweets containing "#organicfood" to see people's opinions on organic food. I also used the raw dataset called "Crop Recommendation" to predict the best conditions for twenty-two kinds of crops in the dataset.<br>
+          <br>
+          <br>
+          <span style="font-weight: 700; font-size: 2.25rem;">ERS dataset and Farms Financial Well-beings</span>
+          <br>From the Exploring Data page, I learned the top two net farm incomes by the state are California and Texas. And I wonder if it's also the case when it comes to average farm income and average farm profit margin throughout the states. With my further analysis, I found the top three states which have the highest average net farm income are Texas, Illinois, and Georgia, with California being the fifth. From the average profit margin graph, I learned that the top five states having the highest profit margin are Illinois, Georgia, Wisconsin, Iowa, and Minnesota. It's interesting to see the differences with regard to the net gross income by state and by farm. It also means the amount of farms in California is quite sizable.<br>
+          <br>In the Clustering using R page, I learned there's not a lot of distinct differences between the financial statement of dairy, cattle, wheat, coconut-peanut-tobacco, all other livestock, and corn farms.<br>
+          <br>
+          <br>
+          <span style="font-weight: 700; font-size: 2.25rem;">PubAg Dataset and the ​Correlation between Agricultural Terms</span>
+          <br>In the Text Data clustering page, it shows a general idea about the news content with the keywords "diary", "corn", "farms", "organic farms", and "wheat" tight. From the different wordcloud generated based on each keyword, I learned there's a relationship between "soil" and "organic farms" - that might be helpful if I wanted a deeper analysis regarding soil and organic farms from the clustering results.&nbsp;Also, there aren’t distinct differences between the five labeled datasets, since they are all subcategories of farms activities. The labels to each entity are named after the keyword that was used to search for the content data, so the labels are very broad so the text data itself could be overlapping with each other since three of them are agricultural products ("dairy", "wheat, and "corn") and two of the labels are quite similar ("farms" and "organic farms"). With that being said, it wouldn't be surprising if the clustering results don't exactly match with the original labels.&nbsp;&nbsp;<br>
+          <span style="font-weight: 700; font-size: 2.25rem;"></span>
+        </p>
+        <img class="u-image u-image-default u-image-2" src="images/9-Foods-Help-Boost-Immune-System2_edit_0.jpeg" alt="" data-image-width="800" data-image-height="400">
+        <img class="u-image u-image-default u-image-3" src="images/healthy-organic-food-vector-27123702.jpeg" alt="" data-image-width="1000" data-image-height="1080">
+        <img class="u-image u-image-default u-image-4" src="images/organicfood.jpeg" alt="" data-image-width="311" data-image-height="162">
+        <p class="u-align-center u-text u-text-custom-color-2 u-text-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+          <span style="font-weight: 700;"></span>
+          <span style="font-weight: 700; font-size: 2.25rem;">Twitter data and People's Opinions on Organic Food</span>
+          <br>In the Association Rule Mining analysis page, I gathered the most recent 7040 tweets with "#orgacfood" from Twitter with the curiosity to know people's opinions on organic food and what are the most related ​topics or items when it comes to organic food. I found the most frequent words are best, health, natural, fresh. However, I didn't realize until later that a quite amount of tweets are directly from the merchants trying to promote their products instead of actual people. I will take that into account next time. It's a good lesson to learn.<br>
+          <br>
+          <br>
+          <span style="font-weight: 700; font-size: 2.25rem;">Crops Recommendation and Prediction</span>
+          <br>In the Decision Tree analysis page, when analyzing the various conditions of the crops, I knew that humidity is a key feature for splitting the nodes.&nbsp;<br>
+          <br>In the Naive Bayes analysis page, ph and rainfall have the least impact on crops compared to humidity, N, P, K, and temperature. <br>
+          <br>From the Naive Bayes and Support Vector Machine analysis page, I analyzed the essential living condition for crops and made the appropriate prediction.&nbsp;
+        </p>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-custom-color-1 u-footer u-footer" id="sec-9ddc"><div class="u-align-left u-clearfix u-sheet u-sheet-1"></div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+    </section>
+  </body>
+</html>

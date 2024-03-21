@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Introduction​, Farms​">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>ARM</title>
+    <link rel="stylesheet" href="page.css" media="screen">
+<link rel="stylesheet" href="ARM.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="page.js" defer=""></script>
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    
+    
+    
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="ARM">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body u-custom-color-2"><header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-0fb1"><div class="u-align-left u-clearfix u-sheet u-sheet-1"></div></header>
+    <section class="u-clearfix u-custom-color-2 u-section-1" id="sec-fe08">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-align-center u-text u-text-custom-color-6 u-text-1">
+          <span style="font-size: 3rem;">Association Rule Mining in R</span>
+        </h2>
+        <p class="u-align-left u-text u-text-custom-color-3 u-text-2">This page shows the process of Association Rule Mining for twitter data in R Studio.<br>
+          <br>Below is the code<span style="font-weight: 700;">
+            <a href="files/ARM_RCode_rmd1.pdf" class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-1"> (download)</a>
+          </span>:&nbsp;<br>
+          <br>
+          <embed src="files/ARM_RCode_rmd1.pdf#toolbar=0&embedded=true&zoom=140" style="-webkit-transform:scale(1);-moz-transform-scale(1)" width="100%" height="1300px" frameborder="0">
+          <br>
+          <br>
+
+          <br>The raw data is the dataframe of the tweets information regarding the keyword "#organicfood".<br>The image shows how the raw data look like:<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>After making the data into transaction data, the data now looks like <span style="font-weight: 700;">
+            <a href="files/TweetResults-2.csv" class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-2">(download)</a>
+          </span>:<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>In the transaction dataset showing above, there are 444 rows, and each row represents one tweet containing the keyword "#organicfood". After ARM analysis, it's excited to see what's people's opions on organic food.<br>
+          <br>
+          <span style="font-weight: 700;">
+            <span style="font-weight: 400;">What is </span>
+            <span style="font-size: 2.25rem;">Association Rule Mining</span>
+            <span style="font-weight: 400;">?</span>
+          </span>
+          <br>
+          <br>"Association rule mining, at a basic level, involves the use of&nbsp;<a href="https://searchenterpriseai.techtarget.com/definition/machine-learning-ML" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-3">machine learning</a>&nbsp;models to analyze data for patterns, or co-occurrences, in a database. It identifies frequent if-then associations, which themselves are the&nbsp;association rules.An association rule has two parts: an antecedent (if) and a consequent (then). An antecedent is an item found within the data. A consequent is an item found in combination with the antecedent. Association rules are created by searching data for frequent if-then patterns and using the criteria&nbsp;<span style="font-weight: 700;">support</span>&nbsp;and&nbsp;<span style="font-weight: 700;">confidence</span>&nbsp;to identify the most important relationships.&nbsp;<span style="font-weight: 700; font-style: italic;">Support</span>&nbsp;is an indication of how frequently the items appear in the data.&nbsp;<span style="font-weight: 700; font-style: italic;">Confidence</span>&nbsp;indicates the number of times the if-then statements are found true. A third metric, called&nbsp;<span style="font-weight: 700; font-style: italic;">lift</span>, can be used to compare confidence with expected confidence, or how many times an if-then statement is expected to be found true.Association rules are calculated from&nbsp;itemsets, which are made up of two or more items. If rules are built from analyzing all the possible itemsets, there could be so many rules that the rules hold little meaning. With that, association rules are typically created from rules well-represented in data." (<a href="https://searchbusinessanalytics.techtarget.com/definition/association-rules-in-data-mining" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-4" target="_blank">TechTarget.com</a>)<br>&nbsp;<br>When applying ARM to the twitter dataset using <span style="font-weight: 700; font-style: italic;">apriori</span> method, the thresholds are set to be&nbsp;​support=0.02, conf=0.5, maxlen=2. 397 rules returned.<br>
+          <br>
+          <span style="font-weight: 700;">• The top 15 rows for support:</span>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>Support&nbsp;is an indication of how frequently the two items appear in the data. For example, in the first row of {food} and {organic}. the support 0.17 means the frequency of both words appeared in a trasaction - a tweet.<br>
+          <br>
+          <br>
+          <span style="font-weight: 700;">• The top 15 rows for confidence:</span>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>Confidence&nbsp;indicates the number of times the if-then statements are found true. For example, in the first row of {himalayas} and {mukteshwar}, the confidence is calculated by having the support value 0.021 divided by the frequency of {himalayas} appeared in the whole dataset. It means that given the frequency of {himalayas}. the frequency of {mukteshwar} is 1. It also means with the confidence equals to 1, we can interpret that the words in <span style="font-style: italic;">rhs</span> always show up in the tweets where contains the words in the acoording <span style="font-style: italic;">lhs</span> column.&nbsp;<br>
+          <br>
+          <br>
+          <span style="font-weight: 700;">• The top 15 rows for lift:</span>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>Lift can be used to compare confidence with expected confidence, or how many times an if-then statement is expected to be found true.Association rules are calculated from&nbsp;itemsets, which are made up of two or more items. If rules are built from analyzing all the possible itemsets, there could be so many rules that the rules hold little meaning. When lift equals to 1, the two items are independent with each other. When lift bigger than 1, the two items have postive correlation. For example, in the frist row, {foode} and {exchange} has positive correlation since their lift value is 42,83.&nbsp;<br>
+          <br>
+          <br>
+          <span style="font-weight: 700; font-size: 2.25rem;">visualization</span>
+          <br>
+          <span style="font-weight: 700;">igraph&nbsp;</span>
+          <br>Plot the top 100 rules from apriori sorted by <span style="font-weight: 400; font-style: italic;">support</span> value:<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>&nbsp;<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>Once click the image, it will lead to another page showing the zoom-in version of the image. The support plot with directness shows besides the strong relationship between "organic", "food", and "products", other words connected with "organic" show the other high frequency words along with it in people's tweets, such as "health", "farming", "natural", "best", etc. The another high frequency word is "foode", and it's quite interesting to see the different words surrounding it with the comparison of the association on the left.<br>
+          <br>
+          <br>
+          <br>Plot the top 100 rules from apriori sorted by <span style="font-style: italic;">confidence</span> value.&nbsp;<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>The word "exchange", "diets", and "foode" have the most <span style="font-weight: 700;">edges</span> with arrows. In other words, these three words have the most confidence-based relationships with other words in the image.&nbsp;<br>
+          <br>
+          <br>
+          <br>Plot the top 100 rules from apriori sorted by lift value.&nbsp;<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>The total 10 words showing in the image have the positive correlations between each other. Compared to the first two association plot, this one has less words but more spread-out connection. In another words, with the knowledge of <span style="font-weight: 700;">nodes</span> have either a programmed or engineered capability to recognize, process and forward transmissions to other network nodes, the nodes here are relatively equally distributed in the graph than the others.<br>
+          <br>
+          <br>The other graph using igraph::simplify function, using the rules from all&nbsp;<span style="font-style: italic;">lift</span> value.<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>The two major association clusters are generated from the word "organic" and "food".&nbsp; There are some tiny differences between this graph and the graph using top 100 lift values - this graph has more words in the network than the previous one.&nbsp;<br>
+        </p>
+        <img class="u-expanded-width u-image u-image-default u-image-1" src="images/raw.png" alt="" data-image-width="2002" data-image-height="954">
+        <img class="u-expanded-width u-image u-image-default u-image-2" src="images/rawraw.png" alt="" data-image-width="1816" data-image-height="1080">
+        <img class="u-image u-image-default u-image-3" src="images/sup2.png" alt="" data-image-width="1284" data-image-height="612">
+        <img class="u-expanded-width u-image u-image-default u-image-4" src="images/conf1.png" alt="" data-image-width="1274" data-image-height="616">
+        <img class="u-expanded-width u-image u-image-default u-image-5" src="images/lift1.png" alt="" data-image-width="1204" data-image-height="616">
+        <img class="u-expanded-width u-file-link u-image u-image-default u-image-6" src="images/Rplots_sup.jpg" alt="" data-image-width="1600" data-image-height="947" data-href="files/Rplots_sup.jpg" data-target="_blank">
+        <img class="u-expanded-width u-file-link u-image u-image-default u-image-7" src="images/Rplots_conf.jpg" alt="" data-image-width="1600" data-image-height="951" data-href="files/Rplots_conf.jpg" data-target="_blank">
+        <img class="u-file-link u-image u-image-default u-image-8" src="images/Rplots_lift.jpg" alt="" data-image-width="2306" data-image-height="1342" data-href="files/Rplots_lift.jpg" data-target="_blank">
+        <img class="u-expanded-width u-file-link u-image u-image-default u-image-9" src="images/plot_.png" alt="" data-image-width="1485" data-image-height="1463" data-href="files/plot_.png" data-target="_blank">
+      </div>
+    </section>
+    <section class="u-clearfix u-custom-color-2 u-section-2" id="sec-a8e4">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-text u-text-custom-color-3 u-text-1">
+          <span style="font-weight: 700;">I​nteractive networkD3</span>
+          <br>Interactive network generated from the total rules of support values of the transaction data from priori&nbsp;<a href="files/background_support.html" class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-1" target="_blank">(page)</a>:<br>
+          <br>
+          <embed src="files/background_support.html#toolbar=0&embedded=true&zoom=140" style="-webkit-transform:scale(1);-moz-transform-scale(1)" width="1800px" height="800px" frameborder="0">
+          <br>
+          <br>
+          <br>Interactive network generated from the total rules of <i>confidence</i> values of the transaction data from apriori&nbsp;<a href="files/background_networkconf.html" target="_blank" class="u-active-none u-border-none u-btn u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-2">(page)</a>:<br>
+          <br>
+          <embed src="files/background_networkconf.html#toolbar=0&embedded=true&zoom=140" style="-webkit-transform:scale(1);-moz-transform-scale(1)" width="1800px" height="800px" frameborder="0">
+          <br>
+          <br>
+          <br>Interactive network generated from the total rules of <i>lift</i> values of the transaction data from apriori&nbsp;<a href="files/background_lift.html" target="_blank" class="u-active-none u-border-none u-btn u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-3">(page)</a>:<br>
+          <br>
+          <embed src="files/background_lift.html#toolbar=0&embedded=true&zoom=140" style="-webkit-transform:scale(1);-moz-transform-scale(1)" width="1800px" height="1200px" frameborder="0">
+          <br>
+          <br>
+          <br>
+          <br>
+          <span style="font-weight: 700;">Insights</span>
+          <br>The word "organic", and "food" are the two under the spotlight. There are more words connected to "organic" than "food". The word "breakfast" links with "organic", which probably indicates that "people who value organic food also value their breakfast", or "people who like to have more organic food in their breakfast". Also, from "best" and "health" which connect to "organic", it's possible to assume people think organic food is healthy and is the best. The other cluster is generated from "healthy". Several words are qiote unique and their connections to "healthy" and "organic food" might be interesting to explore. Similarly, the words "india", "himalayas", "nirvana", "mukteshwar" are between "organic" and "food", which could be an interesting topic to explore deeper.<br>
+          <br>All three graphs have a lot of shared words and similar connections, but how they are connected and the meanings behind each graphs are not quite the same. As mentioned in the previous paragraph, three association rules have three different meanings. Every rule gives us an idea about the relationship between two target items, which can be exploited in further data sicence topic.&nbsp;
+          <br>
+          <br>
+        </p>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-custom-color-1 u-footer u-footer" id="sec-9ddc"><div class="u-align-left u-clearfix u-sheet u-sheet-1"></div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+    </section>
+  </body>
+</html>

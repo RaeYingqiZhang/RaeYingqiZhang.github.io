@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Introduction​, Farms​">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>clustering text data</title>
+    <link rel="stylesheet" href="page.css" media="screen">
+<link rel="stylesheet" href="clustering-text-data.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="page.js" defer=""></script>
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    
+    
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="clustering text data">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body u-custom-color-1"><header class="u-clearfix u-custom-color-2 u-header u-header" id="sec-0fb1"><div class="u-align-left u-clearfix u-sheet u-sheet-1"></div></header>
+    <section class="u-clearfix u-custom-color-2 u-section-1" id="sec-fe08">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-align-center u-text u-text-custom-color-6 u-text-1">
+          <span style="font-size: 3rem;">Clustering - Text Data (Python)</span>
+        </h2>
+        <p class="u-text u-text-custom-color-3 u-text-2">This page will go through the process of clustering text data gathered from PubAg website. The text file contains five labelled data - "Diary", "Corn", "Organic Farms", "Wheat", and "Farms". The Python code below demenstrates using CountVectorizer to transform .txt data into numeric dataframe with the frequency of each word appeared in the text file, and the clutering process <span style="font-weight: 700;">
+            <a href="files/PythonCodeClustering.pdf" class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-1" target="_blank">(dowonload)</a>
+          </span>:<br>
+          <br>
+          <br>
+          <embed src="files/PythonCodeClustering.pdf#toolbar=0&embedded=true&zoom=140" style="-webkit-transform:scale(1);-moz-transform-scale(1)" width="100%" height="900px" frameborder="0">
+          <br>
+  
+          <br>
+          <br>The code has given a general idea of the clustering process. Now let's explain what has been done in the code.<br>
+          <br>Before entering into the clustering process, it's better to have an holistic idea of the labelled text dataframe.<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>Below are the wordcloud visualization with labels and without labels.<br>Word Cloud Visualization of the whole text data:&nbsp;<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>Word Cloud Visualization of the labelled cluters:<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>Next, the code uses the Elbow method and Silhouette Method to find the optimum value of k. Silhouette method helps to determine the optimal number of clusters&nbsp;in kmeans clustering.<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>From the Elbow method, 4, 5, 6 7 and 9 show the distinct change of slope. However, it's hard to determine the best k value yet.<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>The two pairs of Silhouette and Calinski Harabasz Score graphs are representing the ideal k values given two different ranges - 2 to 6 and 2 to 15. The first pair shows the ideal k is 4, whereas the second pair shows the ideal k could be 4, 7, 9 and 11. 4 has the highest Silhouette score and the distict change of slope. Therefore, the optimal k value is 4.<br>
+          <br>Since the ideal k value is chosen, the next step is to use kmean clustering to cluster the data. Before fianlly start to cluster the data, it's necessary to use PCA, principle component analysis, to reduce dataset's dimensionality by identifying the vevtors (columns) with the highest eigenvalue or most distinct/largest variation from the other components.<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>The two scatter plots above are the same plot but with different x and y scale. The second one is the zoom-in version of the first one so that it's better to read the labels in the scatter plot to gain more information.&nbsp;<br>
+          <br>Set k=4, the visualization of hierarchical clustering is a dendrogram showing below. The distance method used in this clustering is Euclidean distance.<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>The dengrogram shows the data is very harge and the most of the entities are in the fourth cluster. Also, the dendrogram gives a very clear illustration on the detailed relationships between each cluster. After obtaining the dendrogram, it's possible to set k to be a larger value in order to give more specified clusters.<br>
+          <br>The code also performed DBSCAN. Below is the DBSCAN result:<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>DBSCAN result shows the data is not spherical-sahped clustered or convex clustered.<br>
+          <br>The last step is to cluster the data and make visualizations.<br>The first graph is made based on PCA components.<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>The next is a dendrogram with k=4. It shows the majority of the dataset is in one cluster, which doesn't match with the original label that well.<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <span style="font-weight: 700;">Summary</span>
+          <br>The lesson learned from the text data is when the orginial labels are not connected to the data itself, the clustering results wouldn't quite match with the labels number. The labels to each entities are named after the keyword that was used to search for the content data, so the labels are very board so the text data itself could be overlapping with each other since three of them are agricultural products ("dairy", "wheat, and "corn") and two of the labels are quite similar ("farms" and "organic farms"). With that being said, it wounldn't be surprising if the clustering results don't exactly match with the original labels.&nbsp;<br>
+          <br>Also, from the code itself, the biggest difference of Python clustering is we have to instantiate every model and use fit() function to fill in the variables or information, which gives the coders more space and freedom, whereas R Studio has very easy syntax of distance matices and visualization methods, which makes the coding experience relatively better.&nbsp;
+        </p>
+        <img class="u-image u-image-default u-image-1" src="images/textdataquickview.png" alt="" data-image-width="3024" data-image-height="1542">
+        <img class="u-file-link u-image u-image-default u-image-2" src="images/wordcloud_total_textdata.png" alt="" data-image-width="2037" data-image-height="1222" data-href="files/wordcloud_total_textdata.png" data-target="_blank">
+        <img class="u-file-link u-image u-image-default u-image-3" src="images/wordcloud_dairy.png" alt="" data-image-width="1546" data-image-height="1162" data-href="files/wordcloud_dairy.png" data-target="_blank">
+        <img class="u-file-link u-image u-image-default u-image-4" src="images/wordcloud_corn.png" alt="" data-image-width="1411" data-image-height="1055" data-href="files/wordcloud_corn.png" data-target="_blank">
+        <img class="u-file-link u-image u-image-default u-image-5" src="images/wordcloud_farms.png" alt="" data-image-width="1227" data-image-height="1223" data-href="files/wordcloud_farms.png" data-target="_blank">
+        <img class="u-file-link u-image u-image-default u-image-6" src="images/wordcloud_organicfarms.png" alt="" data-image-width="1433" data-image-height="956" data-href="files/wordcloud_organicfarms.png" data-target="_blank">
+        <img class="u-file-link u-image u-image-default u-image-7" src="images/wordcloud_wheat.png" alt="" data-image-width="1545" data-image-height="1161" data-href="files/wordcloud_wheat.png" data-target="_blank">
+        <img class="u-image u-image-default u-image-8" src="images/elbowmethodpython.png" alt="" data-image-width="1716" data-image-height="1320">
+        <img class="u-image u-image-default u-image-9" src="images/silhouetterange6python.png" alt="" data-image-width="1460" data-image-height="1376">
+        <img class="u-image u-image-default u-image-10" src="images/silhouetterange15python.png" alt="" data-image-width="1518" data-image-height="1369">
+        <img class="u-image u-image-default u-image-11" src="images/pca_plot_python.png" alt="" data-image-width="1672" data-image-height="1483">
+        <img class="u-image u-image-default u-image-12" src="images/pca_plot_python2.png" alt="" data-image-width="1532" data-image-height="1430">
+        <img class="u-file-link u-image u-image-default u-image-13" src="images/pca_label_python.png" alt="" data-image-width="2514" data-image-height="1570" data-href="files/pca_label_python.png" data-target="_blank">
+        <img class="u-file-link u-image u-image-default u-image-14" src="images/pca_label_python_zoomin.png" alt="" data-image-width="2528" data-image-height="1537" data-href="files/pca_label_python_zoomin-1.png" data-target="_blank">
+        <img class="u-file-link u-image u-image-default u-image-15" src="images/dendrok4pythonpng.png" alt="" data-image-width="2391" data-image-height="1433" data-href="files/dendrok4pythonpng.png" data-target="_blank">
+        <img class="u-image u-image-default u-image-16" src="images/edist_matrix.png" alt="" data-image-width="2688" data-image-height="1470">
+        <img class="u-file-link u-image u-image-default u-image-17" src="images/PCAcomponentclustering.png" alt="" data-image-width="1737" data-image-height="1112" data-href="files/PCAcomponentclustering.png" data-target="_blank">
+        <img class="u-image u-image-default u-image-18" src="images/DBSCAN.png" alt="" data-image-width="1172" data-image-height="1072">
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-custom-color-1 u-footer u-footer" id="sec-9ddc"><div class="u-align-left u-clearfix u-sheet u-sheet-1"></div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+    </section>
+  </body>
+</html>
